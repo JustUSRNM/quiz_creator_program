@@ -14,12 +14,19 @@ def question_making():
     question_data = {'question' : question, 'choices' : choices, 'answer' : correct_answer}
     return question_data
 # using a loop to create question and stopping when prompted to
+quiz_data = []
+while True:
     # run the creating a question function
+    question_data = question_making()
+    quiz_data.append(question_data)
     # ask if the user to continue
+    continue_input = input('Add another question? (y/n)\n')
+    if continue_input.lower() == 'n':
+        break
 # export the data to a text file
 
 
 
 
 
-question_making()
+print (quiz_data)
