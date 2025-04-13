@@ -1,4 +1,5 @@
 # defining the function for creating a question
+import json
 def question_making():
     # input the question
     question = input("Enter the question\n")
@@ -24,9 +25,5 @@ while True:
     if continue_input.lower() == 'n':
         break
 # export the data to a text file
-
-
-
-
-
-print (quiz_data)
+with open(r"C:\Users\Admin\Documents\Python Compilations\quiz_tasks\quiz.json", "w") as json_file:
+    json.dump(quiz_data, json_file, indent=4)
