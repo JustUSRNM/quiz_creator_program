@@ -14,6 +14,7 @@ def question_making():
     # save the question data using a dictionary
     question_data = {'question' : question, 'choices' : choices, 'answer' : correct_answer}
     return question_data
+# get the file location this program then put the text file in it
 # using a loop to create question and stopping when prompted to
 quiz_data = []
 while True:
