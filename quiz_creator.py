@@ -29,5 +29,10 @@ while True:
     if continue_input.lower() == 'n':
         break
 # export the data to a text file
-with open(filename, "w") as json_file:
-    json.dump(quiz_data, json_file, indent=4)
+try:    
+    with open(filename, "w") as json_file:
+        json.dump(quiz_data, json_file, indent=4)
+except FileExistsError:
+    os.remove(program_path)
+    with open(filename, "w") as json_file:
+        json.dump(quiz_data, json_file, indent=4)
