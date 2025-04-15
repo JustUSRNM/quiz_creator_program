@@ -1,5 +1,6 @@
 # defining the function for creating a question
 import json
+import os
 def question_making():
     # input the question
     question = input("Enter the question\n")
@@ -15,6 +16,8 @@ def question_making():
     question_data = {'question' : question, 'choices' : choices, 'answer' : correct_answer}
     return question_data
 # get the file location this program then put the text file in it
+program_path = os.path.dirname(os.path.abspath(__file__))
+filename = os.path.join(program_path, "quiz.json")
 # using a loop to create question and stopping when prompted to
 quiz_data = []
 while True:
@@ -26,5 +29,5 @@ while True:
     if continue_input.lower() == 'n':
         break
 # export the data to a text file
-with open(r"C:\Users\Admin\Documents\Python Compilations\quiz_tasks\quiz.json", "w") as json_file:
+with open(filename, "w") as json_file:
     json.dump(quiz_data, json_file, indent=4)
