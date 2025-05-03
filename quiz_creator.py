@@ -6,8 +6,8 @@ def question_making():
     question = input("Enter the question\n")
     # input the choices
     choices = {}
-    for option in ['A', 'B', 'C', 'D']:
-        choices[option] = input(f"Enter the answer for option {option}\n")
+    for option in ['option_a', 'option_b', 'option_c', 'option_d']:
+        choices[option] = input(f"Enter the answer for {option}\n")
     # input the correct answer
     correct_answer = input("Enter the correct answer for this question\n")
     while correct_answer not in choices.values():
