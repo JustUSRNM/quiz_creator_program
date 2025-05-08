@@ -24,15 +24,13 @@ while True:
     # run the creating a question function
     question_data = question_making()
     quiz_data.append(question_data)
+    print (quiz_data)
     # ask if the user to continue
     continue_input = input('Add another question? (y/n)\n')
     if continue_input.lower() == 'n':
         break
-# export the data to a text file
-try:    
-    with open(filename, "w") as json_file:
-        json.dump(quiz_data, json_file, indent=4)
-except FileExistsError:
-    os.remove(program_path)
-    with open(filename, "w") as json_file:
-        json.dump(quiz_data, json_file, indent=4)
+
+
+# export the data to a text file    
+with open(filename, "w") as json_file:
+    json.dump(quiz_data, json_file, indent=4)
