@@ -20,7 +20,13 @@ options = random_question['choices']
 print ('Question:', random_question['question'])
 for opt, ans in random_question['choices'].items():
     print(f"{opt[-1].upper()}: {ans}")
-user_input = input('Type the letter of the correct answer:\n')
+while True:
+    user_input = input('Type the letter of the correct answer:\n')
+    if user_input.lower() in ('a' , 'b', 'c', 'd'):
+        break
+    else:
+        print ('Invalid input. Try again')
+        
 user_answer = options[comparison[user_input.lower()]]
 print ('Your answer is:', user_answer)
 print ('The correct answer is:', random_question['answer'])
@@ -29,6 +35,6 @@ print ('The correct answer is:', random_question['answer'])
 if random_question['answer'] == user_answer:
 
 # display if they passed or not
-    print ('correct')
+    print ('Congratulation, you got the correct answer!!')
 else:
-    print ('wrong')
+    print ('Bad luck, you chose the wrong answer. Better luck next time')
