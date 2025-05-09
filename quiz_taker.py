@@ -13,10 +13,17 @@ with open(filename, 'r') as file:
 
 # pick a random question
 random_question = random.choice(quiz_data)
+comparison = {'a': 'option_a' , 'b' : 'option_b', 'c' : 'option_c' , 'd' : 'option_d'}
+options = random_question['choices']
 
 # let the taker answer the question
 print ('Question:', random_question['question'])
 for opt, ans in random_question['choices'].items():
     print(f"{opt[-1].upper()}: {ans}")
+user_input = input('Type the letter of the correct answer:\n')
+user_answer = options[comparison[user_input.lower()]]
+print ('user_answer:', user_answer)
+
 # check the answer if it is correct
+
 # display if they passed or not
