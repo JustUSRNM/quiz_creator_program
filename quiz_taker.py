@@ -22,8 +22,13 @@ for opt, ans in random_question['choices'].items():
     print(f"{opt[-1].upper()}: {ans}")
 user_input = input('Type the letter of the correct answer:\n')
 user_answer = options[comparison[user_input.lower()]]
-print ('user_answer:', user_answer)
+print ('Your answer is:', user_answer)
+print ('The correct answer is:', random_question['answer'])
 
 # check the answer if it is correct
+if random_question['answer'] == user_answer:
 
 # display if they passed or not
+    print ('correct')
+else:
+    print ('wrong')
